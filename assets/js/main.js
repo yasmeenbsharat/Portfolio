@@ -25,19 +25,16 @@ window.addEventListener("scroll",function(){
     }else{
         moveTop.style.opacity='0'; 
     }
-
-
-
 });
+
 moveTop.addEventListener('click',function(){
     window.scroll({
         top:0,
         behavior:'smooth'
 
     })
-
-
 })
+
 //smooth scroll
 let links=document.querySelectorAll("nav .nav-link");
 
@@ -52,13 +49,24 @@ link.addEventListener("click",function(e){
         behavior:'smooth'
 
     }
-
-
    )
-
-
-
 });
+});
+//loading screen 
+let body=document.body
+body.style.overflow='hidden';
 
+let loading=document.querySelector('.loading');
+loading.style.opacity='1';
+loading.style.visibility='visible';
+loading.style.transition='1s';
+
+window.addEventListener("load",function(){
+ setTimeout(function(){
+    loading.style.opacity='0';
+    loading.style.visibility='hidden';
+    loading.style.transition='1s';
+    body.style.overflow='auto';
+ },2000);
 
 });
